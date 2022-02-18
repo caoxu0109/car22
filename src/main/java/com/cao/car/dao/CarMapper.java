@@ -1,6 +1,7 @@
 package com.cao.car.dao;
 
 import com.cao.car.pojo.Car;
+import com.cao.car.pojo.Location;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
 
@@ -10,11 +11,12 @@ import java.util.List;
 @Repository
 public interface CarMapper {
 
-    public Car getCar(Integer master);
 
-    public boolean addCar(Integer id , Car car);
+    public Car getCarbyID(String carID);
 
-    public boolean deleteCar(Integer id);
+    public boolean addCar( Car car);
 
-    public List<String> getCarLocation(Integer id);
+    public boolean deleteCar(String CarID);
+
+    public List<Location> getCarLocation(String CarID);
 }

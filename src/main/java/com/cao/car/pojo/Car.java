@@ -13,5 +13,5 @@ public class Car {
    private String Carid;
    private String type;
    private Integer master;
-   private List<String> location;
+  // private List<String> location;
 }

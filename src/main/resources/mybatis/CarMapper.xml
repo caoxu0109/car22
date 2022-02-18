@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.cao.car.dao.CarMapper">
+
+
+    <select id="getCarbyID" resultType="Car" parameterType="String">
+        select * from car where CarID = #{carID}
+    </select>
+
+    <insert id="addCar" parameterType="Car">
+      insert into Car (CarID,type,master) values (#{Carid},#{type},#{master})
+    </insert>
+
+    <delete id="deleteCar" parameterType="String">
+        delete from car where CarID = #{CarID}
+    </delete>
+    
+    <select id="getCarLocation" resultType="Location">
+        select l.name name, l.degree degree,l.placeid placeid from location l,carlocation c
+        where c.carid=#{CarID} and c.placeid=l.placeid
+    </select>
+</mapper>

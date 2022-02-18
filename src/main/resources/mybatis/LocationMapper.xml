@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.cao.car.dao.LocationMapper">
+    <select id="SearchAll" resultType="Location" >
+        select * from location
+    </select>
+
+    <select id="SearchLocation" resultType="Location" parameterType="String">
+        select * from location where name = #{name}
+    </select>
+
+    <insert id="addLocation" parameterType="Location">
+      insert into location (name,degree,placeid) values (#{name},#{degree},#{placeId})
+    </insert>
+
+    <update id="changeLocation" parameterType="Location">
+        update location set degree = #{degree} where name =#{name}
+    </update>
+
+    <select id="SearchCar" resultType="Car">
+        select c.carid carid,c.type type,c.master,master from car c,carlocation l
+        where l.placeid=#{placeid} and c.carid=l.carid
+    </select>
+
+</mapper>

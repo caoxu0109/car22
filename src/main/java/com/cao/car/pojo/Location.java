@@ -10,5 +10,5 @@ import lombok.NoArgsConstructor;
 public class Location {
     private String name;
     private String degree;
-    private String CarId;
+    private Integer placeId;
 }

@@ -10,10 +10,10 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 public class UserMessage {
+    Integer number;
     Integer id;
     String name;
     String email;
     String location;
-    List<Car> cars;
     Integer phone;
 }
